@@ -18,7 +18,7 @@ class answersModel{
 
     public static function find_by_id($id)
     {
-        $data = DB::table('answers')->where('id', $id)->first();
+        $data = DB::table('answers')->where('id', $id)->get();
         return $data;
     }
 }

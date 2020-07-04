@@ -2,19 +2,23 @@
 @section('judul', 'Answers Table')
 @section('mainContent')
 <div>
-    @foreach($datas as $data)
+    @foreach($datas as $data => $item)
     <div class="card">
         <div class="card-header">
-            {{ $data->isi }}
+            {{ $item->isi }}
         </div>
         <div class="card-body">
-          <h5 class="card-title">{{ $data->is_selected }}</h5>
-          <h5 class="card-title">{{ $data->created_at }}</h5>
-          <h5 class="card-title">{{ $data->updated_at }}</h5>
-          <a href="/jawaban" class="btn btn-primary">Kembali</a>
+        <h5 class="card-title">{{ $item->is_selected }}</h5>
+        <br>
+        <h5 class="card-title">{{ $item->created_at }}</h5>
+        <br>
+        <h5 class="card-title">{{ $item->updated_at }}</h5>
+        <br>
+        <a href="/jawaban" class="btn btn-primary">Kembali</a>
         </div>
     </div>
     @endforeach
 </div>
 
 @endsection
+
