@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function() {
-    return view('index');
-});
-Route::get('/data-tables', function() {
-    return view('table');
-});
+Route::get('/pertanyaan', 'questionsController@index');
+Route::get('/pertanyaan/create', 'questionsController@create');
+Route::post('/pertanyaan', 'questionsController@store');
+
+Route::get('/jawaban/{pertanyaan_id}', 'answersController@show');
+
+Route::get('/jawaban', 'answersController@index');
+Route::get('/jawaban/create', 'answersController@create');
+Route::post('/jawaban', 'answersController@store');
 
