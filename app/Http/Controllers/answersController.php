@@ -40,4 +40,24 @@ class answersController extends Controller
             return redirect('/jawaban');
         }
     }
+
+    public function edit($id)
+    {
+        $datas = answersModel::find_by_id($id);
+        // dd($datas[0]);
+        return view('answers.edit', compact('datas'));
+    }
+
+    public function update($id, Request $request)
+    {
+        // dd($request->all());
+        $data = answersModel::update($id, $request->all());
+        return redirect('/jawaban');
+    }
+
+    public function destroy($id)
+    {
+        $delete = answersModel::destroy($id);
+        return redirect('/jawaban');
+    }
 }

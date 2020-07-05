@@ -18,8 +18,9 @@ Route::get('/pertanyaan/create', 'questionsController@create');
 Route::post('/pertanyaan', 'questionsController@store');
 
 Route::get('/jawaban/{pertanyaan_id}', 'answersController@show');
-
 Route::get('/jawaban', 'answersController@index');
 Route::get('/jawaban/create', 'answersController@create');
 Route::post('/jawaban', 'answersController@store');
-
+Route::get('/jawaban/{id}/edit', 'answersController@edit'); //menampilkan form untuk edit
+Route::put('/jawaban/{id}', 'answersController@update');
+Route::delete('/jawaban/{id}', 'answersController@destroy');

@@ -30,8 +30,12 @@
          <td>{{ $item->updated_at }}</td>
          <td>
           <a href="/jawaban/{{ $item->id }}" class="btn btn-secondary">Detail</a>
-          <a href="" class="btn btn-primary">Ubah</a>
-          <a href="" class="btn btn-danger">Hapus</a>
+          <a href="/jawaban/{{ $item->id }}/edit" class="btn btn-primary">Ubah</a>
+          <form action="/jawaban/{{ $item->id }}" method="POST" style="display: inline">
+            @csrf
+            @method('DELETE')
+              <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+          </form>
          </td>
         </tr>
         @endforeach
